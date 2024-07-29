@@ -4,7 +4,7 @@
 <p>{{ firstSignal }}</p>
 
 <ul>
-  @for(name of names(); track $index){
+  @for(name of nameSvc.names(); track $index){
     <li>{{ name.name }}</li>
   }
 </ul>
@@ -23,11 +23,11 @@
   }
 </ul>
 
-<button (click)="clearNames()">Clear Names</button>
+<button (click)="nameSvc.clearNames()">Clear Names</button>
 
 <br/>
 <br/>
 <br/>
 
 <input type="text" [value]="newName()" (input)="updateNewName($event)">
-<button (click)="append(newName())">New Name</button>
+<button (click)="nameSvc.append(newName())">New Name</button>
